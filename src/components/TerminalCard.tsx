@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Image, Text, Alert } from "react-native";
 import { Card, Layout } from "@ui-kitten/components";
 
+
 export const STATE_SUCCESS = 'success'
 export const STATE_ERROR = 'danger'
 
@@ -9,7 +10,6 @@ interface ITerminalCardProps {
     text: string,
     state: string,
 }
-
 
 export class TerminalCard extends React.Component<ITerminalCardProps>{
     onPressCard() {
@@ -39,23 +39,21 @@ export class TerminalCard extends React.Component<ITerminalCardProps>{
 }; 
 
 const styles = StyleSheet.create({
-    divider: {
-        marginBottom: 15,
-        marginTop: 15,
-    },
     card: {
-        width:150,
+        width:120,
         margin: 10,
     },
     image: {
         width: 30,
-        height: 70
+        height: 75
     },
     subTextSuccess: {
-        fontSize: 12,
+        fontSize: 8,
+        color: 'rgba(0,150,0,0.8)'
     },
     subTextError: {
-        fontSize: 12,
+        fontSize: 8,
+        color: 'rgba(200,0,0,0.8)'
     }, 
     cardContent: {
         alignItems: 'center',
