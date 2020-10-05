@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, News, Settings, Stats, NewsDetail, Menu } from './Importer';
+import { Home, News, Settings, Stats, NewsDetail, Menu, Upgrade } from './Importer';
 import NavHeader from './components/NavHeader';
 import MenuAnimation from './animations/Menu';
 import ScreenAnimation from './animations/Screen';
@@ -11,6 +11,18 @@ const Stack = createStackNavigator();
 const Navigation = () => {
     return (
         <Stack.Navigator>
+            <Stack.Screen 
+                name="Upgrade"
+                component={Upgrade}
+                options={{ 
+                header: props => 
+                    <NavHeader 
+                        {...props}
+                        title='Mise à niveau'
+                    />,
+                    ...ScreenAnimation 
+                }}
+            />
             <Stack.Screen 
                 name="Home"  
                 component={Home}  
@@ -54,6 +66,7 @@ const Navigation = () => {
                     ...ScreenAnimation 
                 }}
             />
+
             
 
 

@@ -33,6 +33,11 @@ export default class Menu extends Component {
                             destination='Stats'
                         />
                         <MenuItem
+                            text="Mise à niveau"
+                            navigate={navigate}
+                            destination='Upgrade'
+                        />
+                        <MenuItem
                             text="Paramètres"
                             navigate={navigate}
                             destination='Settings'
