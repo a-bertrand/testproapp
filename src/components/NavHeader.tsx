@@ -10,7 +10,7 @@ export default class NavHeader extends Component {
         return (
             <Layout style={styles.headerStyle}>
                 <TouchableHighlight
-                    style={styles.button}
+                    style={styles.menuButton}
                     underlayColor='rgba(200,200,200,0)'
                     onPress={ () => navigate('Menu')}
                 >
@@ -35,15 +35,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         height: Platform.OS === 'ios' ? 80 : 50,
         padding:Platform.OS === 'ios' ? 0 : 5,
-        paddingTop:Platform.OS === 'ios' ? 30: 0,
+        paddingTop:Platform.OS === 'ios' ? 30: 0
     },
     icon: {
         width:30,
-        height: 30,
-        alignSelf:'flex-start',
+        height: 40,
     },
     text: {
         marginLeft: 25,
         textTransform: 'capitalize',
     },
+    menuButton: {
+        width: 40,
+        height: 40
+    }
 });

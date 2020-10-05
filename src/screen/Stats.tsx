@@ -16,10 +16,9 @@ const Stats = () => {
   return (
     <ScrollView>
       <Layout>
-        <Text category='p1' appearance='hint' style={{textAlign: 'center'}}>
+        <Text category='p1' appearance='hint' style={{textAlign: 'center', marginBottom: 15}}>
           ( Dernière actualisation le 28/01/2020 )
         </Text>
-        <SpaceDivider />
         <Layout style={styles.boxTopStats}>
           <ValueBox text="Casse totale" value='15678 €'/>
           <ValueBox text="Revalorisation totale" value='6599 €'/>
@@ -39,12 +38,12 @@ const Stats = () => {
           <CircularDiagram />
         </Layout>
         <SpaceDivider />
-        <Text category='h5'>Top articles stickés</Text>
+        <Text category='h5' style={{marginBottom: 15}}>Top articles stickés</Text>
         <Layout>
           <DataTable />
         </Layout>
         <SpaceDivider />
-        <Text category='h5'>Top fréquence</Text>
+        <Text category='h5' style={{marginBottom: 15}}>Top fréquence</Text>
         <Layout>
           <DataTable />
         </Layout>

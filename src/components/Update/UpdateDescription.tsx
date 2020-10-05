@@ -12,9 +12,6 @@ export interface UpdateDescriptionProps {
 
 
 export class UpdateDescription extends React.Component<UpdateDescriptionProps>{
-    static defaultProps = {
-        onlyText: false
-    }
     render() {
         return (
             <Layout style={styles.box}>
@@ -25,7 +22,7 @@ export class UpdateDescription extends React.Component<UpdateDescriptionProps>{
                     { 
                         !this.props.onlyText ? <></> : 
                         <Text category='p1' style={styles.innerTextPrice}>
-                            {this.props.price} / mois
+                            {this.props.price} € / mois
                         </Text> 
                     }
                 </View>
@@ -41,7 +38,6 @@ export class UpdateDescription extends React.Component<UpdateDescriptionProps>{
 
 const styles = StyleSheet.create({
     box: {
-        padding: 35,
         alignItems: 'flex-start',
         flexDirection: 'row',
         flexWrap: 'wrap'

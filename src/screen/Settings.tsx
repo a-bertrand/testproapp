@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Layout, Text} from '@ui-kitten/components';
+import { Button, Layout, Text} from '@ui-kitten/components';
 import SpaceDivider from '../components/SpaceDivider';
 import {TerminalCard, STATE_SUCCESS, STATE_ERROR} from '../components/TerminalCard';
 import { StickSlider } from '../components/StickSlider';
-import { ScrollView } from 'react-native-gesture-handler';
+import { ScrollView, TouchableHighlight } from 'react-native-gesture-handler';
 import SwitchBtn from '../components/SwitchBtn';
 
 
@@ -13,22 +13,23 @@ const data = new Array(8).fill({
   description: 'Description for Item',
 });
 
-const ListDividersShowcase = () => {
+const ListDividersShowcase = (props) => {
+  const {navigate} = props.navigation
   return (
     <Layout>
       <ScrollView style={{padding:25}}>
         <StickSlider />
         <SpaceDivider />
-        <Text style={{textAlign:'center', marginBottom:25}}>Mes terminaux :</Text>
-        <Layout style={styles.terminalBox}>
-          <TerminalCard state={STATE_SUCCESS} text='Terminal A'/>
-          <TerminalCard state={STATE_SUCCESS} text='Terminal B'/>
-          <TerminalCard state={STATE_ERROR} text='Terminal C'/>
-          <TerminalCard state={STATE_SUCCESS} text='Terminal D'/>
-        </Layout>
+          <Text style={{textAlign:'center', marginBottom:25}}>Mes terminaux :</Text>
+          <Layout style={styles.terminalBox}>
+            <TerminalCard state={STATE_SUCCESS} text='Terminal A'/>
+            <TerminalCard state={STATE_SUCCESS} text='Terminal B'/>
+            <TerminalCard state={STATE_ERROR} text='Terminal C'/>
+            <TerminalCard state={STATE_SUCCESS} text='Terminal D'/>
+          </Layout>
         <SpaceDivider/>
         <Layout style={styles.notificationsBox}>
-        <Text>Notifications :</Text>
+          <Text>Notifications :</Text>
           <Layout style={styles.innerNotificationsBox}>
             <SwitchBtn  text='Nouvel article'/>
             <SwitchBtn  text='Terminal non synchro'/>
@@ -36,6 +37,13 @@ const ListDividersShowcase = () => {
             <SwitchBtn  text='Taux de stick trop faible'/>
           </Layout>
         </Layout>
+        <SpaceDivider/>
+        <TouchableHighlight onPress={ () => navigate('Home')} style={{height: 90}} underlayColor='rgba(200,200,200,0.0)'>
+          <Button style={styles.button} status='danger'>
+            Se déconnecter
+          </Button>
+        </TouchableHighlight>
+        
       </ScrollView>
     </Layout>
   );

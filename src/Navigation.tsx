@@ -12,21 +12,21 @@ const Navigation = () => {
     return (
         <Stack.Navigator>
             <Stack.Screen 
-                name="Upgrade"
-                component={Upgrade}
+                name="Home"  
+                component={Home}  
+                options={{headerShown: false}}
+            />
+            <Stack.Screen 
+                name="News"
+                component={News}
                 options={{ 
                 header: props => 
                     <NavHeader 
                         {...props}
-                        title='Mise à niveau'
+                        title='Nouveautés'
                     />,
                     ...ScreenAnimation 
                 }}
-            />
-            <Stack.Screen 
-                name="Home"  
-                component={Home}  
-                options={{headerShown: false}}
             />
             <Stack.Screen 
                 name="Settings"
@@ -43,6 +43,18 @@ const Navigation = () => {
                 }
             />
             <Stack.Screen 
+                name="Upgrade"
+                component={Upgrade}
+                options={{ 
+                header: props => 
+                    <NavHeader 
+                        {...props}
+                        title='Mise à niveau'
+                    />,
+                    ...ScreenAnimation 
+                }}
+            />
+            <Stack.Screen 
                 name="Stats"
                 component={Stats}
                 options={{ 
@@ -54,27 +66,14 @@ const Navigation = () => {
                     ...ScreenAnimation 
                 }}
             />
-            <Stack.Screen 
-                name="News"
-                component={News}
-                options={{ 
-                header: props => 
-                    <NavHeader 
-                        {...props}
-                        title='Nouveautés'
-                    />,
-                    ...ScreenAnimation 
-                }}
-            />
-
-            
 
 
             <Stack.Screen 
                 name="NewsDetail"
                 component={NewsDetail}
                 options={{
-                ...ArticleDetailAnimation
+                    headerTitle: '',
+                    ...ArticleDetailAnimation
                 }}
             />
             <Stack.Screen 
