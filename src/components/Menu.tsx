@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Layout, Icon } from "@ui-kitten/components"
-import { TouchableHighlight, StyleSheet } from "react-native"
+import { TouchableHighlight, StyleSheet, Platform } from "react-native"
 import MenuItem from "./MenuItem"
 
 
@@ -50,7 +50,8 @@ export default class Menu extends Component {
 const styles = StyleSheet.create({
     box: {
         height:'100%',
-        backgroundColor: 'transparent'
+        backgroundColor: 'transparent',
+        paddingTop: Platform.OS === 'ios' ? 90 : 0
     },
     closeButton: {
         width:40

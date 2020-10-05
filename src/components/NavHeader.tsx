@@ -1,5 +1,5 @@
 import { Text, Layout, Icon, Divider } from '@ui-kitten/components';
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions, Platform } from 'react-native';
 import  MenuItem from './NewsListItem';
 import React, { Component } from 'react';
 import { TouchableHighlight } from 'react-native-gesture-handler';
@@ -33,8 +33,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         textAlign: 'center',
         alignItems: 'center',
-        height: 50,
-        padding:5
+        height: Platform.OS === 'ios' ? 80 : 50,
+        padding:Platform.OS === 'ios' ? 0 : 5,
+        paddingTop:Platform.OS === 'ios' ? 30: 0,
     },
     icon: {
         width:30,
